@@ -1,6 +1,6 @@
 PostitTemplate::Application.routes.draw do
   root to: 'posts#index'
-
+  
   get '/register', to: 'users#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -9,7 +9,7 @@ PostitTemplate::Application.routes.draw do
 
    resources :users, only:[:show, :create, :edit, :update]
    resources :categories, only: [:new, :create, :show, :index]
-
+   resources :jobs, only: [:show, :index]
    resources :posts, except: [:destroy] do
      member do
       post 'vote'

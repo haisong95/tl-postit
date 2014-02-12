@@ -1,5 +1,14 @@
 <%= render 'shared/content_title', title: 'All Notes' %>
 
+<div class="alert alert-block">
+  <button type="button" class="close" data-dismiss="alert">
+  x</button>
+  <h3> Welcome </h3>
+  This is a clsss notes online market. We devote to provide best quality notes to help student study. Every Notes on our website are seclected restrictly from on-cumpus student. Register then you can add courses and vote for them, we promise send a free copy of our best notes to user who add this course. We will also seclect students who vote for class randomly.
+  
+  <br/>
+    <h2><%= link_to "Join Us!", jobs_path %></h2>
+</div>
 <% @user = User.new   %>
 <% @post.each do |post| %>
 	<%= render 'post', post: post %>

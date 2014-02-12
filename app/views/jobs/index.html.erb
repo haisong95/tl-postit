@@ -1,0 +1,7 @@
+<%= render 'shared/content_title', title: 'Jobs' %>
+<h3> Currently We Need: <h3>
+<h4><% @job.each do |job| %>
+  <%=link_to "#{job.name}", job_path(job) %>
+  <hr/>
+<% end %>
+<h4>
