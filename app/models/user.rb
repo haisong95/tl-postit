@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
 
   validates :username, presence: true, uniqueness: true
   validates :password, presence: true, on: :create, length: {minimum: 5}
-  validates :email, presence: true, uniqueness: true, :format => { :with => /@(umn.edu|gmail\.com)\z/, :message => " is not end with @umn.edu" } 
+  validates :email, presence: true, uniqueness: true
+
 end
