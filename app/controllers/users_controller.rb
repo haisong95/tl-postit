@@ -14,7 +14,7 @@ class UsersController < ApplicationController
    if @user.save
     session[:user_id] = @user.id
     flash[:notice] = "You are Registered"
-    redirect_to root_path
+    redirect_to posts_path
    else
     render :new
    end
