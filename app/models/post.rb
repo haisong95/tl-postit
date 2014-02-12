@@ -7,7 +7,6 @@ class Post < ActiveRecord::Base
   has_many :votes, as: :voteable
 
 	validates :title, presence: true
-	validates :url, presence: true, uniqueness: true
 	validates :description, presence: true
 
   def total_votes
