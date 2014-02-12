@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :email, format: {with: /@(umn.edu|gmail\.com)\z/, message: "was not allowed for student out of umn" }
 
+
 end
