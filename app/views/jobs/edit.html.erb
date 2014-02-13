@@ -1,0 +1,23 @@
+<%= form_for @job do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br/>
+  <br/>
+  <%= f.label :description %>
+  <%= f.text_area :description, rows: 5 %>
+  <br/>
+  <br/>
+  <%= f.label :feature %>
+  <%= f.text_area :feature, rows: 5 %>
+  <br/>
+  <br/>
+  <%= f.label :challenge %>
+  <%= f.text_area :challenge, rows: 5 %>
+  <br/>
+  <br/>
+  <%= f.label :salary %>
+  <%= f.text_area :salary, rows: 5 %>
+  <br/>
+
+  <%= f.submit(@job.new_record? ? 'Create Job' : 'Update Job', class: 'btn btn-primary')%>
+<% end %>
