@@ -11,4 +11,12 @@ class User < ActiveRecord::Base
   validates :email, format: {with: /@(umn.edu|gmail\.com)\z/, message: "was not allowed for student out of umn" }
 
 
+  def admin?
+    self.role == 'admin'
+  end
+
+  def moderator?
+    self.role == 'moderator'
+  end
+
 end

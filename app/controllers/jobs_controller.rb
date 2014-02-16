@@ -1,11 +1,14 @@
 class JobsController < ApplicationController
+  before_action :set_jobs, only: [:show, :edit, :update]
+  before_action :require_admin, only: [:create, :edit, :update, :new]
+
+
 
   def index
     @job = Job.all
   end
 
   def show
-    @job = Job.find(params[:id])
   end
 
   def new
@@ -23,8 +26,6 @@ class JobsController < ApplicationController
   end
   
   def edit
-        @job = Job.find(params[:id])
-
   end
 
   def update
@@ -38,6 +39,11 @@ class JobsController < ApplicationController
 
   def job_params
     params.require(:job).permit!
+  end
+  
+
+  def set_jobs
+    @job = Job.find(params[:id])
   end
 
 end

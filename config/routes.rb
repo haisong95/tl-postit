@@ -7,10 +7,11 @@ PostitTemplate::Application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/addjob', to: 'jobs#new'
   post '/addjob', to: 'jobs#new'
+  
 
 
    resources :users, only:[:show, :create, :edit, :update]
-   resources :categories, only: [:new, :create, :show, :index]
+   resources :categories, only: [:new, :create, :show, :index, :edit, :update]
    resources :jobs, only: [:show, :index, :create, :new, :edit, :update]
    resources :posts, except: [:destroy] do
      member do
